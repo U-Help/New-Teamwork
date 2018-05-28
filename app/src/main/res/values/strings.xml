@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="app_name">U-Help</string>
     <string name="title_activity_register">RegisterActivity</string>
 </resources>
