@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">U-Help</string>
+    <string name="app_name">Login</string>
     <string name="title_activity_register">RegisterActivity</string>
+
+    <string name="title_home"> 代取广场</string>
+    <string name="title_dashboard">我发出的代取</string>
+    <string name="title_notifications">我收到的代取</string>
 </resources>

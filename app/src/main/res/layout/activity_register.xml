@@ -58,7 +58,7 @@
         android:layout_toEndOf="@+id/textPassword"
         android:layout_toRightOf="@+id/textPassword"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnRegister"
