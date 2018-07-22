@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         btnSetting = findViewById(R.id.btnSetting);
         btnSetting.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SettingActivity.class));
+                startActivity(new Intent(MainActivity.this, SwipeActivity.class));
             }
         });
     }
