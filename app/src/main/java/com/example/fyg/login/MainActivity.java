@@ -23,12 +23,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-import android.view.MenuInflater;
-import android.app.Activity;
-import android.os.Bundle;
-import android.view.*;
-import android.widget.*;
-
 public class MainActivity extends AppCompatActivity {
 
     private Button btnLogin;
@@ -42,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editUsername = findViewById(R.id.editUsername);
+        editUsername = findViewById(R.id.editPassword);
         editPassword = findViewById(R.id.editPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new OnClickListener() {
