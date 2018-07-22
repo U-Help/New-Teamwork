@@ -26,7 +26,9 @@
         <activity android:name=".GetActivity" />
         <activity android:name=".ShareActivity" />
         <activity android:name=".HelpGetActivity" />
-        <activity android:name=".FindGetActivity"></activity>
+        <activity android:name=".FindGetActivity" />
+        <activity android:name=".HelpandReflectActivity" />
+        <activity android:name=".ExitActivity"></activity>
     </application>
 
 </manifest>

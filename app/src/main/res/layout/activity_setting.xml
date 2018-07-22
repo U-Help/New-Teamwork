@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="102dp"
+        android:gravity="left|center"
+        android:text="分享"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="141dp"
+        android:gravity="left|center"
+        android:text="帮助与反馈"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnTongxunlu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="205dp"
+        android:gravity="left|center"
+        android:text="通讯录绑定"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btngongzhonghao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="219dp"
+        android:gravity="left|center"
+        android:text="公众号绑定"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnPasser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="156dp"
+        android:gravity="left|center"
+        android:text="快递员模式"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="79dp"
+        android:gravity="left|center"
+        android:text="地址管理"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnInform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="left|center"
+        android:text="消息通知"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnPasswordchange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:gravity="left|center"
+        android:text="修改密码"
+        android:textSize="18sp" />
+</RelativeLayout>

@@ -1,6 +1,5 @@
 package com.example.fyg.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
@@ -26,8 +25,10 @@ import okhttp3.Response;
 public class RegisterActivity extends AppCompatActivity {
 
     private Button btnRegister;
+    private EditText editEmail;
     private EditText editUsername;
     private EditText editPassword;
+    private EditText editTelephone;
     public static  final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     @Override
@@ -35,8 +36,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         btnRegister=findViewById(R.id.btnRegister);
-        editUsername=findViewById(R.id.editUsername);
+        editEmail=findViewById(R.id.editPassword);
+        editUsername=findViewById(R.id.editPassword);
         editPassword=findViewById(R.id.editPassword);
+        editTelephone=findViewById(R.id.editTelephone);
 
         btnRegister.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -47,12 +50,16 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void postRegister(){
         OkHttpClient client=new OkHttpClient();
+        String email=editEmail.getText().toString();
         String username=editUsername.getText().toString();
         String password=editPassword.getText().toString();
+        String telephone=editTelephone.getText().toString();
 
         HashMap<String,String> map=new HashMap<>();
+        map.put("email",email);
         map.put("username",username);
         map.put("password",password);
+        map.put("telephone",telephone);
         JSONObject jsonObject=new JSONObject(map);
         String jsonStr=jsonObject.toString();
         RequestBody body = RequestBody.create(JSON, jsonStr);
