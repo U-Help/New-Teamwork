@@ -6,12 +6,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -29,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editUsername;
     private EditText editPassword;
     private EditText editTelephone;
+    private TextView tv;
     public static  final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     @Override
@@ -36,34 +40,76 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         btnRegister=findViewById(R.id.btnRegister);
-        editEmail=findViewById(R.id.editPassword);
-        editUsername=findViewById(R.id.editPassword);
+        editEmail=findViewById(R.id.editEmail);
+        editUsername=findViewById(R.id.editUsername);
         editPassword=findViewById(R.id.editPassword);
         editTelephone=findViewById(R.id.editTelephone);
 
-        btnRegister.setOnClickListener(new View.OnClickListener(){
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                    postRegister();
+                judge();
             }
         });
     }
 
-    public void postRegister(){
-        OkHttpClient client=new OkHttpClient();
+    public void judge() {
         String email=editEmail.getText().toString();
         String username=editUsername.getText().toString();
         String password=editPassword.getText().toString();
         String telephone=editTelephone.getText().toString();
+        if (isEmail(email)==false) {
+            tv = (TextView) findViewById(R.id.tv);
+            tv.setText("邮箱格式错误");
+        } else if (isMobile(telephone)==false) {
+            tv = (TextView) findViewById(R.id.tv);
+            tv.setText("手机号错误");
+        } else if (isPassword(password)==false) {
+            tv = (TextView) findViewById(R.id.tv);
+            tv.setText("密码只能为6-16位字母数字组合");
+        } else {
+            postRegister(email,username,password,telephone);
+        }
+    }
 
-        HashMap<String,String> map=new HashMap<>();
-        map.put("email",email);
-        map.put("username",username);
-        map.put("password",password);
-        map.put("telephone",telephone);
-        JSONObject jsonObject=new JSONObject(map);
-        String jsonStr=jsonObject.toString();
+    public static boolean isPassword(String password) {
+        String REGEX_PASSWORD = "^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,16}$";
+        return Pattern.matches(REGEX_PASSWORD, password);
+    }
+    public static boolean isUserName(String username) {
+        String REGEX_USERNAME = "^[a-zA-Z]\\\\w{5,17}$";
+        return Pattern.matches(REGEX_USERNAME, username);
+    }
+    public static boolean isMobile(String mobile) {
+        String REGEX_MOBILE = "^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$";
+        return Pattern.matches(REGEX_MOBILE, mobile);
+    }
+    public static boolean isEmail(String email) {
+        if (email == null)
+            return false;
+        String regEx1 = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";
+        Pattern p;
+        Matcher m;
+        p = Pattern.compile(regEx1);
+        m = p.matcher(email);
+        if (m.matches())
+            return true;
+        else
+            return false;
+    }
+
+
+    public void postRegister(String email,String username,String password,String telephone) {
+        OkHttpClient client = new OkHttpClient();
+        HashMap<String, String> map = new HashMap<>();
+        map.put("email", email);
+        map.put("username", username);
+        map.put("password", password);
+        map.put("telephone", telephone);
+        JSONObject jsonObject = new JSONObject(map);
+        String jsonStr = jsonObject.toString();
         RequestBody body = RequestBody.create(JSON, jsonStr);
-        Request request=new Request.Builder()
+        Request request = new Request.Builder()
                 .url("http://47.106.160.148:5000/register")
                 .post(body)
                 .build();
@@ -72,27 +118,25 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 Looper.prepare();
-                Toast.makeText(RegisterActivity.this,"Register Failed",Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Register Failed", Toast.LENGTH_LONG).show();
                 Looper.loop();
             }
+
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Looper.prepare();
-                    Toast.makeText(RegisterActivity.this,response.body().string(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, response.body().string(), Toast.LENGTH_LONG).show();
                     Looper.loop();
-                }
-                else
-                {
+                } else {
                     Looper.prepare();
-                    Toast.makeText(RegisterActivity.this,"Register Response Failed "+response.body().string(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Register Response Failed " + response.body().string(), Toast.LENGTH_LONG).show();
                     Looper.loop();
                 }
             }
         });
         finish();
     }
-
 }
 
 
