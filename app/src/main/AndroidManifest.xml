@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="U-Help"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
