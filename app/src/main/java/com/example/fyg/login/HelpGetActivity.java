@@ -9,8 +9,12 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class HelpGetActivity extends AppCompatActivity {
-
+public class HelpGetActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener {
+    private SwipeRefreshLayout mSwipeLayout;
+    private ListView mListView;
+    private ArrayList<String> list = new ArrayList<String>();
+    private ArrayAdapter<String> adapter;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
