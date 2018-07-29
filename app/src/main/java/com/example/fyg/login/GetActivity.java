@@ -13,9 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class GetActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private Button btn_get;
+    private Button btn_help;
+    private Button btn_status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,25 @@ public class GetActivity extends AppCompatActivity implements NavigationView.OnN
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        btn_get = findViewById(R.id.btn_get);
+        btn_get.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(GetActivity.this, FindGetActivity.class));
+            }
+        });
+        btn_help = findViewById(R.id.btn_help);
+        btn_help.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(GetActivity.this, HelpGetActivity.class));
+            }
+        });
+        btn_status = findViewById(R.id.btn_status);
+        btn_status.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(GetActivity.this, HistoryActivity.class));
+            }
+        });
     }
 
     @Override
@@ -92,7 +115,7 @@ public class GetActivity extends AppCompatActivity implements NavigationView.OnN
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-
+            startActivity(new Intent(GetActivity.this, SettingActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
