@@ -35,4 +35,33 @@ public class HelpGetActivity extends Activity implements SwipeRefreshLayout.OnRe
                 android.R.color.holo_green_light, android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
     }
+
+    private ArrayList<String> getData() {
+        list.add("Hello world!");
+        list.add("CSDN:程序员小冰");
+        list.add("An Android Developer");
+        list.add("http://weibo.com/mcxiaobing");
+        list.add("http://git.oschina.net/MCXIAOBING");
+        list.add("https://github.com/QQ986945193");
+        list.add("An Android Developer");
+        list.add("http://weibo.com/mcxiaobing");
+        list.add("http://git.oschina.net/MCXIAOBING");
+        list.add("https://github.com/QQ986945193");
+        list.add("An Android Developer");
+        list.add("http://weibo.com/mcxiaobing");
+        list.add("http://git.oschina.net/MCXIAOBING");
+        list.add("https://github.com/QQ986945193");
+        return list;
+    }
+
+    public void onRefresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //停止刷新
+                mSwipeLayout.setRefreshing(false);
+
+            }
+        }, 3000);
+    }
 }
