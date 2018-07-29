@@ -1,0 +1,38 @@
+CREATE TABLE `item` (
+  `item_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `prop_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `rece_time` datetime DEFAULT NULL,
+  `srcplace` varchar(128) DEFAULT NULL,
+  `dstplace` varchar(128) DEFAULT NULL,
+  `size` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `msg` varchar(1000) DEFAULT NULL,
+  `is_available` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `pub` (
+  `proposer_id` int(11) NOT NULL,
+  `item_id` bigint(20) NOT NULL,
+  `accepter_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`item_id`),
+  KEY `proposer_id` (`proposer_id`),
+  KEY `accepter_id` (`accepter_id`),
+  CONSTRAINT `pub_ibfk_1` FOREIGN KEY (`proposer_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `pub_ibfk_2` FOREIGN KEY (`accepter_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `pub_ibfk_3` FOREIGN KEY (`item_id`) REFERENCES `item` (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `email` varchar(64) DEFAULT NULL,
+  `phone` varchar(11) DEFAULT NULL,
+  `realname` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=100001 DEFAULT CHARSET=utf8;
