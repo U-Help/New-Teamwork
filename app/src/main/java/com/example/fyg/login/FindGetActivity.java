@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.Spinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,66 +15,38 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class FindGetActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener {
-    private SwipeRefreshLayout mSwipeLayout;
-    private ListView mListView;
-    private ArrayList<String> list = new ArrayList<String>();
-    private ArrayAdapter<String> adapter;
-
+public class FindGetActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private Spinner mSpinner = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_get);
 
-        mListView = (ListView) findViewById(R.id.listview);
-        /**
-         * listview绑定adapter
-         */
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getData());
-        mListView.setAdapter(adapter);
+        // 获取界面布局文件中的Spinner组件
+        mSpinner = (Spinner) findViewById(R.id.spin);
 
-        mSwipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
-        //绑定刷新时间
-        mSwipeLayout.setOnRefreshListener(this);
-        //设置颜色
-        mSwipeLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
-                android.R.color.holo_green_light, android.R.color.holo_orange_light,
-                android.R.color.holo_red_light);
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(FindGetActivity.this, i+"被单击了", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(FindGetActivity.this, DetailActivity.class));
-            }
-        });
+        String[] arr = { "初识Android开发", "Android初识开发", "Android中级开发",
+                "Android高级开发", "Android开发进阶"};
+        // 创建ArrayAdapter对象
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, arr);
+        // 为Spinner设置Adapter
+        mSpinner.setAdapter(adapter);
+
+        // 为Spinner设置选中事件监听器
+        mSpinner.setOnItemSelectedListener(this);
+
     }
 
-    private ArrayList<String> getData() {
-        list.add("Hello world!");
-        list.add("CSDN:程序员小冰");
-        list.add("An Android Developer");
-        list.add("http://weibo.com/mcxiaobing");
-        list.add("http://git.oschina.net/MCXIAOBING");
-        list.add("https://github.com/QQ986945193");
-        list.add("An Android Developer");
-        list.add("http://weibo.com/mcxiaobing");
-        list.add("http://git.oschina.net/MCXIAOBING");
-        list.add("https://github.com/QQ986945193");
-        list.add("An Android Developer");
-        list.add("http://weibo.com/mcxiaobing");
-        list.add("http://git.oschina.net/MCXIAOBING");
-        list.add("https://github.com/QQ986945193");
-        return list;
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String content = parent.getItemAtPosition(position).toString();
+        if(parent.getId()==R.id.spin)
+            Toast.makeText(FindGetActivity.this, "选择的收货地址是：" + content, Toast.LENGTH_SHORT).show();
     }
 
-    public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //停止刷新
-                mSwipeLayout.setRefreshing(false);
-
-            }
-        }, 3000);
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
     }
 }

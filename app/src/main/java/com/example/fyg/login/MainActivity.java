@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editUsername = findViewById(R.id.editUsername);
-        editPassword = findViewById(R.id.editPassword);
+        editUsername = findViewById(R.id.editPassword);
+        editPassword = findViewById(R.id.editAddress);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnPush);
         btnRegister.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
