@@ -42,6 +42,7 @@ public class FindGetActivity extends Activity implements SwipeRefreshLayout.OnRe
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(FindGetActivity.this, i+"被单击了", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(FindGetActivity.this, DetailGetActivity.class));
             }
         });
     }

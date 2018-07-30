@@ -30,7 +30,8 @@
         <activity android:name=".FindGetActivity" />
         <activity android:name=".HelpandReflectActivity" />
         <activity android:name=".ExitActivity" />
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".DetailActivity"></activity>
     </application>
 
 </manifest>
