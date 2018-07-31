@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<<<<<<< HEAD
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> 2e0f699cc2baa20bd2aede10adf0ce7b6a2494d1
+>>>>>>> 5174ad2cd58a61d804956cb0977e6685614b2246
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+<<<<<<< HEAD
     <TextView
         android:id="@+id/textView8"
         android:layout_width="84dp"
@@ -33,3 +42,18 @@
         android:layout_marginEnd="51dp"
         android:text="放弃" />
 </RelativeLayout>
+=======
+<<<<<<< HEAD
+</android.support.constraint.ConstraintLayout>
+=======
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="264dp"
+        android:layout_height="87dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="176dp"
+        android:text="TextView" />
+</RelativeLayout>
+>>>>>>> 2e0f699cc2baa20bd2aede10adf0ce7b6a2494d1
+>>>>>>> 5174ad2cd58a61d804956cb0977e6685614b2246

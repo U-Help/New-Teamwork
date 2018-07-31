@@ -11,7 +11,7 @@
 
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnPush"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_above="@+id/tv"
@@ -32,7 +32,7 @@
 
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/editTelephone"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/textView6"
@@ -45,7 +45,7 @@
         android:paddingLeft="10dp" />
 
     <EditText
-        android:id="@+id/editUsername"
+        android:id="@+id/editPassword"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/textView3"
@@ -58,7 +58,7 @@
         android:paddingLeft="10dp" />
 
     <EditText
-        android:id="@+id/editPassword"
+        android:id="@+id/editAddress"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
@@ -87,21 +87,21 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editEmail"
+        android:layout_below="@+id/editTelephone"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editPassword"
+        android:layout_below="@+id/editAddress"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editUsername"
+        android:layout_below="@+id/editPassword"
         android:layout_centerHorizontal="true" />
 
     <TextView
