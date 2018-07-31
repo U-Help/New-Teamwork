@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String jsonStr = jsonObject.toString();
         RequestBody body = RequestBody.create(JSON, jsonStr);
         Request request = new Request.Builder()
-                .url("http://47.106.160.148:5000/login")
+                .url("http://47.100.116.160:5000/user/login")
                 .post(body)
                 .build();
 
