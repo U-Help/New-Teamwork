@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String jsonStr = jsonObject.toString();
         RequestBody body = RequestBody.create(JSON, jsonStr);
         Request request = new Request.Builder()
-                .url("http://47.106.160.148:5000/login")
+                .url("http://47.100.116.160:5000/user/login")
                 .post(body)
                 .build();
 
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,GetActivity.class));
                     }
                     else
-                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Login1 Failed", Toast.LENGTH_LONG).show();
                     Looper.loop();
                 } else {
                     Looper.prepare();
