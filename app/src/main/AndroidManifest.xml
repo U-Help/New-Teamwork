@@ -31,7 +31,8 @@
         <activity android:name=".HelpandReflectActivity" />
         <activity android:name=".ExitActivity" />
         <activity android:name=".HistoryActivity" />
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".HistoryDetailActivity"></activity>
     </application>
 
 </manifest>

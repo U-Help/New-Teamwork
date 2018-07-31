@@ -6,33 +6,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-<<<<<<< HEAD
-=======
 import android.widget.Spinner;
->>>>>>> 2e0f699cc2baa20bd2aede10adf0ce7b6a2494d1
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-<<<<<<< HEAD
 import android.widget.Spinner;
-=======
->>>>>>> 2e0f699cc2baa20bd2aede10adf0ce7b6a2494d1
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class FindGetActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-<<<<<<< HEAD
     private SwipeRefreshLayout mSwipeLayout;
     private ListView mListView;
     private ArrayList<String> list = new ArrayList<String>();
     private ArrayAdapter<String> adapter;
     private Spinner mSpinner = null;
 
-=======
-    private Spinner mSpinner = null;
->>>>>>> 2e0f699cc2baa20bd2aede10adf0ce7b6a2494d1
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +38,7 @@ public class FindGetActivity extends AppCompatActivity implements AdapterView.On
                 android.R.layout.simple_list_item_1, arr);
         // 为Spinner设置Adapter
         mSpinner.setAdapter(adapter);
-<<<<<<< HEAD
+
 
         // 为Spinner设置选中事件监听器
         mSpinner.setOnItemSelectedListener(this);
@@ -62,23 +52,6 @@ public class FindGetActivity extends AppCompatActivity implements AdapterView.On
     }
 
     @Override
-=======
-
-        // 为Spinner设置选中事件监听器
-        mSpinner.setOnItemSelectedListener(this);
-
-    }
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String content = parent.getItemAtPosition(position).toString();
-        if(parent.getId()==R.id.spin)
-            Toast.makeText(FindGetActivity.this, "选择的收货地址是：" + content, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
->>>>>>> 2e0f699cc2baa20bd2aede10adf0ce7b6a2494d1
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
 }
