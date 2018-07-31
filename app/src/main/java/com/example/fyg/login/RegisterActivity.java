@@ -39,10 +39,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        btnRegister=findViewById(R.id.btnRegister);
-        editEmail=findViewById(R.id.editEmail);
-        editUsername=findViewById(R.id.editUsername);
-        editPassword=findViewById(R.id.editPassword);
+        btnRegister=findViewById(R.id.btnPush);
+        editEmail=findViewById(R.id.editTelephone);
+        editUsername=findViewById(R.id.editPassword);
+        editPassword=findViewById(R.id.editAddress);
         editTelephone=findViewById(R.id.editTelephone);
 
 
