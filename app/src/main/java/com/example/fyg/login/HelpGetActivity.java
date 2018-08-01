@@ -41,7 +41,7 @@ public class HelpGetActivity extends Activity implements SwipeRefreshLayout.OnRe
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(HelpGetActivity.this, i+"被单击了", Toast.LENGTH_LONG).show();
+                Toast.makeText(HelpGetActivity.this, i+1+"被单击了", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(HelpGetActivity.this, DetailActivity.class));
             }
         });

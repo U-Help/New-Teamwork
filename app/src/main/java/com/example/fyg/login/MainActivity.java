@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnregister);
         btnRegister.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
