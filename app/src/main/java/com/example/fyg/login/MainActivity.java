@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editUsername = findViewById(R.id.editUsername);
-        editPassword = findViewById(R.id.editPassword);
+        editUsername = findViewById(R.id.editPassword);
+        editPassword = findViewById(R.id.editAddress);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnPush);
         btnRegister.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
@@ -110,6 +110,12 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Login Failure", Toast.LENGTH_LONG).show();
                         Looper.loop();
                     }
+<<<<<<< HEAD
+=======
+                    else
+                        Toast.makeText(MainActivity.this, "Login1 Failed", Toast.LENGTH_LONG).show();
+                    Looper.loop();
+>>>>>>> c85d9a5bc90396a3ccb32dff3a2ab14956c77dc8
                 } else {
                     Looper.prepare();
                     Toast.makeText(MainActivity.this, "Login Response Failed " + response.body().string(), Toast.LENGTH_LONG).show();

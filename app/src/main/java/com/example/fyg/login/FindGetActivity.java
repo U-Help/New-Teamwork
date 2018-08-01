@@ -1,10 +1,12 @@
 package com.example.fyg.login;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Spinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,6 +38,7 @@ public class FindGetActivity extends AppCompatActivity implements AdapterView.On
                 android.R.layout.simple_list_item_1, arr);
         // 为Spinner设置Adapter
         mSpinner.setAdapter(adapter);
+
 
         // 为Spinner设置选中事件监听器
         mSpinner.setOnItemSelectedListener(this);

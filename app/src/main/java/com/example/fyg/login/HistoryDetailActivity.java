@@ -19,4 +19,8 @@ public class HistoryDetailActivity extends AppCompatActivity {
                 "交易价格：\n";
         text.setText(str);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c85d9a5bc90396a3ccb32dff3a2ab14956c77dc8
