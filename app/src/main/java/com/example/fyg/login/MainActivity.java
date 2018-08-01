@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String jsonStr = jsonObject.toString();
         RequestBody body = RequestBody.create(JSON, jsonStr);
         Request request = new Request.Builder()
-                .url("http://47.106.160.148:5000/login")
+                .url("http://47.100.116.160:5000/user/login")
                 .post(body)
                 .build();
 
@@ -86,14 +86,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
-                    Looper.prepare();
-                    if (response.body().string().equals("success")) {
-                        Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(MainActivity.this,GetActivity.class));
+                    boolean flag = false;
+                    try {
+                        String str = response.body().string();
+
+                        JSONObject jsonStr = new JSONObject(str);
+
+                        if (jsonStr.getString("state").equals("success")) {
+                            flag = true;
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    else
-                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
-                    Looper.loop();
+
+                    if (flag) {
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(MainActivity.this, GetActivity.class);
+                        startActivity(intent);
+                        Looper.loop();
+                    } else {
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, "Login Failure", Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }
                 } else {
                     Looper.prepare();
                     Toast.makeText(MainActivity.this, "Login Response Failed " + response.body().string(), Toast.LENGTH_LONG).show();
@@ -102,5 +118,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }

@@ -39,10 +39,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        btnRegister=findViewById(R.id.btnRegister);
+        btnRegister=findViewById(R.id.btnregister);
         editEmail=findViewById(R.id.editEmail);
-        editUsername=findViewById(R.id.editUsername);
-        editPassword=findViewById(R.id.editPassword);
+        editUsername=findViewById(R.id.editUsename);
+        editPassword=findViewById(R.id.editpassword);
         editTelephone=findViewById(R.id.editTelephone);
 
 
@@ -110,7 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
         String jsonStr = jsonObject.toString();
         RequestBody body = RequestBody.create(JSON, jsonStr);
         Request request = new Request.Builder()
-                .url("http://47.106.160.148:5000/register")
+                .url("http://47.100.116.160:5000/user/register")
                 .post(body)
                 .build();
 

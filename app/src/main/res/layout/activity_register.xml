@@ -11,7 +11,7 @@
 
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnregister"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_above="@+id/tv"
@@ -45,11 +45,12 @@
         android:paddingLeft="10dp" />
 
     <EditText
-        android:id="@+id/editUsername"
+        android:id="@+id/editUsename"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/textView3"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp"
         android:background="@drawable/edit_bg"
         android:ems="10"
         android:gravity="fill_vertical"
@@ -58,7 +59,7 @@
         android:paddingLeft="10dp" />
 
     <EditText
-        android:id="@+id/editPassword"
+        android:id="@+id/editpassword"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"
@@ -74,8 +75,9 @@
         android:id="@+id/editTelephone"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="220dp"
         android:background="@drawable/edit_bg"
         android:ems="10"
         android:gravity="fill_vertical"
